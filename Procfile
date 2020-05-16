@@ -1,1 +1,1 @@
-web:  npm --prefix vue_express/ run start
+web:  npm run start
