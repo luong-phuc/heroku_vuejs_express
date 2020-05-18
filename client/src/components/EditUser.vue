@@ -1,5 +1,5 @@
 <template>
-  <div class="new-user">
+  <div class="edit-user">
       <bread-crumb v-bind:title='title'></bread-crumb>
 
       <form>
@@ -17,11 +17,12 @@
           <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="user.password" name="password">
         </div>
-        <button type="button" class="btn btn-primary" v-on:click="createUser">Submit</button>
+        <button type="button" class="btn btn-primary" v-on:click="editUser">Submit</button>
     </form>
 
     <pre>
       <span> Your information : </span>
+      <span> id : {{user.id}} </span>
       <span> full name : {{user.fullName}} </span>
       <span> email : {{user.email}} </span>
       <span> password : ********* </span>
@@ -35,16 +36,16 @@ import User from '../models/user'
 import UserService from '../services/UserService'
 
 export default {
-  name: 'NewUser',
+  name: 'EditUser',
   data () {
     return {
-      title: ["Users", "Create"],
-      user: new User()
+      title: ["Users", "Edit"],
+      user: UserService.getUserById(this.$route.params.id)
     }
   },
   methods: {
-    createUser: function() {
-      UserService.createUser(this.user)
+    editUser: function() {
+      UserService.updateUser(this.user)
     }
   },
   computed: {
@@ -64,7 +65,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.new-user {
+.edit-user {
 
 }
 </style>

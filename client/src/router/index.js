@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import About from '@/components/About'
 import NewUser from '@/components/NewUser'
+import EditUser from '@/components/EditUser'
+import UserList from '@/components/UserList'
 
 Vue.use(Router)
 
@@ -19,9 +21,19 @@ export default new Router({
       component: About
     },
     {
+      path: '/user',
+      name: 'UserList',
+      component: UserList
+    },
+    {
       path: '/new-user',
       name: 'NewUser',
       component: NewUser
+    },
+    {
+      path: '/user/:id',
+      name: 'EditUser',
+      component: EditUser
     }
   ]
 })
