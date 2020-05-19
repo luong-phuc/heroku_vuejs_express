@@ -41,7 +41,7 @@ app.use('/api/user', userApiRouter)
 
 
 // Configure Server
-const port = process.env.PORT_SERVER || 8080
+const port = process.env.PORT || 8080
 const host = process.env.HOST || '0.0.0.0'
 
 app.listen(port, host, () => console.log(`Server ${host} started on port ${port} .`) )
