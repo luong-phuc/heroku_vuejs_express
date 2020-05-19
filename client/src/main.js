@@ -14,7 +14,8 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 // Set Api Host
-Vue.config.HOST_API = 'http://127.0.0.1:8080'
+// Vue.config.HOST_API = 'http://127.0.0.1:8080'
+Vue.config.HOST_API = ''
 
 /* eslint-disable no-new */
 new Vue({
